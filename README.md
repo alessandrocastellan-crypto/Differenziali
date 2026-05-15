@@ -1,37 +1,40 @@
-# Web app schede differenziali
+# Gestionale schede differenziali
 
-Questa è una prima versione operativa della web app per:
-- caricare uno ZIP con schede `.xls` / `.xlsx`
-- estrarre Blocco, Piano, Nome Quadro, Reparto
-- estrarre gli interruttori con Circuito, Tipo differenziale e Dati nominali
-- modificare manualmente i dati da browser
-- esportare Excel
-- generare PDF stampabile
-- salvare/importare il database JSON
+App web per gestire il database delle schede differenziali.
 
-## Avvio locale
+## Funzioni
 
-Serve Python installato sul PC o su un server.
+- Carica database Excel `.xlsx`
+- Cerca per sede, blocco, quadro, reparto
+- Modifica intestazione scheda
+- Modifica righe interruttori
+- Crea nuove schede
+- Duplica/elimina schede
+- Scarica database Excel aggiornato
+- Genera PDF stampabile di una scheda o di tutte le schede
 
-```bash
-pip install -r requirements.txt
-streamlit run app.py
-```
+## Pubblicazione su Streamlit Cloud
 
-Poi apri il link che compare nel browser.
+Carica su GitHub questi file:
+- `app.py`
+- `requirements.txt`
+- `README.md`
 
-## Uso senza installare programmi sul PC
+Poi su Streamlit Cloud:
+- Repository: il tuo repository GitHub
+- Branch: `main`
+- Main file path: `app.py`
 
-Carica questa cartella su un servizio tipo:
-- Streamlit Community Cloud
-- Render
-- Hugging Face Spaces
-- server aziendale interno
+## Uso
 
-Il file principale è `app.py`.
+1. Apri la web app
+2. Carica il database Excel
+3. Modifica o crea schede
+4. Premi `Salva modifiche`
+5. Scarica il database aggiornato
+6. Scarica il PDF per stampare
 
-## Note importanti
+## Nota
 
-Questa versione contiene un estrattore tollerante ma generico. 
-Se alcune schede hanno layout particolare, puoi correggere i dati direttamente nell'editor.
-Dopo una prova reale, si può migliorare l'estrattore in base ai casi non letti correttamente.
+Questa app non conserva automaticamente i dati online.
+Per non perdere modifiche, scarica sempre il database aggiornato dopo il lavoro.
